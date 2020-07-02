@@ -14,6 +14,9 @@
 * Select backwards until a character
 
 # To do
+* Shortcut shift ctrl l is broken if several lines are selected
+* Shortcut shift ctrl ; may be broken if several lines are selected
+* Sublime market https://packagecontrol.io/ uploadable?
 * Check if a character matches a regexp
 * Check out the application command "expand_selection"
 * Check out the pre-made plugin Packages/Default/goto_line.py in the **Default** package
