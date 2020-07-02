@@ -8,6 +8,9 @@ class SelectionStringInputHandler(sublime_plugin.TextInputHandler):
 
 class SelectionRegexCommand(sublime_plugin.TextCommand):
 
+  def input(self, args):
+    return SelectionStringInputHandler()
+
   def run(self, edit, selection_string):
 
     # Get the manager of all selections in the current view
@@ -27,6 +30,3 @@ class SelectionRegexCommand(sublime_plugin.TextCommand):
       # Extend the current cursor's selection
       new_region = sublime.Region(region.a, new_right_point)
       selection.add(new_region)
-
-  def input(self, args):
-    return SelectionStringInputHandler()
