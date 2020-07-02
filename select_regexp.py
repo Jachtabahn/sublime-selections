@@ -3,42 +3,15 @@ import sublime_plugin
 
 class SelectionCharacterInputHandler(sublime_plugin.TextInputHandler):
 
-  def __init__(self, view):
-    self.view = view
-
   def placeholder(self):
-    return "Expression"
-
-  def initial_text(self):
-    return "i+1"
-
-  def preview(self, expr):
-    try:
-      v = self.view
-      s = v.sel()
-      count = len(s)
-      if count > 5:
-        count = 5
-    except Exception:
-      return ""
-
-  def validate(self, expr):
-    try:
-      v = self.view
-      s = v.sel()
-      return True
-    except Exception:
-      return False
+    return "Selection character"
 
 class SelectionRegexCommand(sublime_plugin.TextCommand):
 
   def description(self):
     return "Extend selected regions with regular expressions"
 
-  def run(self, edit, character):
-
-    print("character")
-    print(character)
+  def run(self, edit, selection_character):
 
     # Get the manager of all selections in the current view
     selection = self.view.sel()
@@ -52,13 +25,11 @@ class SelectionRegexCommand(sublime_plugin.TextCommand):
       right_positions.append(region.b)
       print(region)
 
-    desired_character = '>'
-
     # Compute the extension to each selected region
     new_right_positions = []
     for right_position in right_positions:
       new_right_position = right_position
-      while self.view.substr(new_right_position) not in [desired_character, '\0']:
+      while self.view.substr(new_right_position) not in [selection_character, '\0']:
         new_right_position += 1
       new_right_positions.append(new_right_position)
 
@@ -72,4 +43,4 @@ class SelectionRegexCommand(sublime_plugin.TextCommand):
       selection.add(new_region)
 
   def input(self, args):
-    return SelectionCharacterInputHandler(self.view)
+    return SelectionCharacterInputHandler()
