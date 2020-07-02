@@ -10,9 +10,9 @@
 * Iterate until a given character in the text buffer
 * Bind the command to a combination of keys
 * Pop up some dialog to receive an input
+* Select until a sequence of characters
 
 # To do
-* Select until a sequence of characters
 * Select backwards until a character
 * Check if a character matches a regexp
 * Check out the application command "expand_selection"
