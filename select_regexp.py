@@ -18,15 +18,15 @@ class SelectionRegexCommand(sublime_plugin.TextCommand):
 
     for region in selection:
 
-      # Compute the new right border of the current cursor's selection
-      new_right_point = region.b - 1
+      # Compute the new left border of the current cursor's selection
+      new_left_point = region.a + 1
       current_string = None
       while current_string not in [selection_string, '']:
-        new_right_point += 1
-        current_region = sublime.Region(new_right_point,
-          new_right_point + len(selection_string))
+        new_left_point -= 1
+        current_region = sublime.Region(new_left_point - len(selection_string),
+          new_left_point)
         current_string = self.view.substr(current_region)
 
       # Extend the current cursor's selection
-      new_region = sublime.Region(region.a, new_right_point)
+      new_region = sublime.Region(new_left_point, region.b)
       selection.add(new_region)
