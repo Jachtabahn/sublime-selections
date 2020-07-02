@@ -6,7 +6,7 @@ class SelectionStringInputHandler(sublime_plugin.TextInputHandler):
   def placeholder(self):
     return "Selection character"
 
-class SelectionRegexCommand(sublime_plugin.TextCommand):
+class SelectLeftCommand(sublime_plugin.TextCommand):
 
   def input(self, args):
     return SelectionStringInputHandler()
