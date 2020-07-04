@@ -14,7 +14,7 @@ This creates a new file
 .git/rebase-merge/git-rebase-todo
 ```
 
-If, while editing this file, you terminate the `git-rebase` process, you will end up in a undefined state.
+If, while editing this file, you terminate the `git-rebase` process, you will end up in an undefined state.
 
 This new file may look like this:
 ```sh
@@ -28,7 +28,7 @@ pick f7d8160 Make region span negative
 
 For each commit that you want to edit, replace `pick` with `edit`.
 
-Then save and close this file. In `nano` you can do this by pressing
+Then save and close this file. In `nano` you can do so by pressing
 1. `ctrl+o`
 1. `enter`
 1. `ctrl+x`
@@ -49,7 +49,7 @@ git rebase --continue
 ```
 
 Now, the following has happened:
-* The changes that this commit intoduces have changed.
+* The changes that this commit introduces have changed.
 * The commit date of this commit has changed.
 * The author date of this commit has stayed the same.
 
@@ -109,3 +109,14 @@ git filter-branch --commit-filter '
     git commit-tree "$@";
   fi' HEAD
 ```
+
+## Create a new git history root
+
+Write
+```sh
+git checkout --orphan dev <new-root-commit>
+```
+
+Then a new commit `<new-root-commit>` without parents will be created and a new branch `dev` pointing to it.
+
+Now you can easily rebase any commits on this new commit.
