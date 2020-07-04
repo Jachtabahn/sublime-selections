@@ -28,5 +28,5 @@ class SelectLeftCommand(sublime_plugin.TextCommand):
         current_string = self.view.substr(current_region)
 
       # Extend the current cursor's selection
-      new_region = sublime.Region(new_left_point, region.b)
+      new_region = sublime.Region(region.b, new_left_point)
       selection.add(new_region)
