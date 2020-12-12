@@ -16,6 +16,7 @@
 * If selected to the left, put the cursor to the left of the selected region, so that one can manually modify the selection there
 
 # To do
+* Go to the first character that is not a space
 * Sublime market https://packagecontrol.io/ uploadable?
 * Check out the application command "expand_selection"
 * Check out the pre-made plugin Packages/Default/goto_line.py in the **Default** package
