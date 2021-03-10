@@ -9,7 +9,8 @@ with the content
 
 ```json
 [
-  { "caption": "Selection via Regex", "command": "selection_regex"}
+  { "caption": "Move selectors to the left", "command": "select_left"},
+  { "caption": "Move selectors to the right", "command": "select_right"}
 ]
 ```
 
@@ -23,6 +24,7 @@ Create a file at
 with the content
 ```json
 [
-  { "keys": ["ctrl+shift+l"], "command": "selection_regex" },
+  { "keys": ["ctrl+shift+;"], "command": "select_left" },
+  { "keys": ["ctrl+shift+'"], "command": "select_right" },
 ]
 ```
