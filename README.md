@@ -10,7 +10,7 @@ When you run one of the two commands, it asks for a string. Then every single se
 
 Create a file at
 ```sh
-~/.config/sublime-text-3/Packages/User/Default.sublime-commands
+subl ~/.config/sublime-text-3/Packages/User/Default.sublime-commands
 ```
 with the content
 
@@ -25,7 +25,7 @@ with the content
 
 Create a file at
 ```sh
-"~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
+subl "~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
 ```
 
 with the content
@@ -54,10 +54,10 @@ with the content
 
 # To do
 * Go to the first character that is not a space
+* Check if a character matches a regexp
 * Sublime market https://packagecontrol.io/ uploadable?
 * Check out the application command "expand_selection"
 * Check out the pre-made plugin Packages/Default/goto_line.py in the **Default** package
-* Check if a character matches a regexp
 
 
 # Beispiel 1. Ersetze die Bindestriche mit Leerzeichen in jeder Zeile zwischen < und >
